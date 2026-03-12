@@ -1,0 +1,179 @@
+:root {
+    --bg-main: #f5f7fb;
+    --bg-hero: linear-gradient(120deg, #102a43 0%, #243b53 50%, #334e68 100%);
+    --card: #ffffff;
+    --text: #1f2933;
+    --muted: #52606d;
+    --accent: #d64545;
+    --accent-dark: #ba2525;
+    --ring: rgba(214, 69, 69, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 20% 20%, rgba(36, 59, 83, 0.08), transparent 35%),
+        radial-gradient(circle at 80% 0%, rgba(214, 69, 69, 0.08), transparent 25%),
+        var(--bg-main);
+}
+
+.hero {
+    background: var(--bg-hero);
+    color: #ffffff;
+}
+
+.section-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #102a43;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.05) contrast(1.02);
+}
+
+.media-card {
+    background: var(--card);
+    border: 1px solid #d9e2ec;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 8px 22px rgba(16, 42, 67, 0.08);
+}
+
+.media-element {
+    border-radius: 10px;
+    margin-bottom: 0.9rem;
+    background: #0f1720;
+}
+
+.contact-card .form-control {
+    border-radius: 10px;
+    border-color: #bcccdc;
+}
+
+.contact-card .form-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.25rem rgba(214, 69, 69, 0.15);
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+    border: 0;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+}
+
+.btn-accent:hover {
+    background: var(--accent-dark);
+    color: #ffffff;
+}
+
+.social-card {
+    border-left: 5px solid var(--accent);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.social-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #102a43;
+    background: #e4e7eb;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.social-btn:hover {
+    background: #102a43;
+    color: #ffffff;
+}
+
+.site-footer {
+    background: #102a43;
+    color: #f0f4f8;
+}
+
+.youtube-player-wrapper {
+    overflow: hidden;
+}
+
+.youtube-player-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 0.55rem;
+}
+
+.controls-grid button {
+    border: 0;
+    border-radius: 10px;
+    padding: 0.55rem 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--accent);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.controls-grid button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+.controls-grid button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--ring);
+}
+
+.carousel-caption h3 {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 991px) {
+    .gallery-image {
+        height: 360px;
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery-image {
+        height: 250px;
+    }
+
+    .controls-grid {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-btn {
+        text-align: center;
+    }
+}
